@@ -1,0 +1,6 @@
+﻿*.dll
+*/obj/*
+*/bin/*
+*.fsproj
+*.sln
+.idea
