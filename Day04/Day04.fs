@@ -1,4 +1,5 @@
-﻿open System.IO
+open System.Collections.Generic
+open System.IO
 
 let input = File.ReadAllText(__SOURCE_DIRECTORY__ + "\input_04.txt")
 
@@ -7,7 +8,7 @@ let solve_a (input: string) =
     |> Array.map (fun a ->
         a.Split ','
         |> Array.map (fun b -> (b.Split '-' |> Array.map int))
-        |> Array.map (fun c -> set [ c[0] .. c[1] ]))
+        |> Array.map (fun c -> HashSet [ c[0] .. c[1] ]))
     |> Array.filter (fun [| a; b |] -> a.IsSupersetOf b || b.IsSupersetOf a)
     |> Array.length
 
